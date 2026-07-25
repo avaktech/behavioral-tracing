@@ -1,62 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3870227120860587"
-     crossorigin="anonymous"></script>
-
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PQ5K3DCJ83"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-PQ5K3DCJ83');
-</script>
-    <head>
-  <!-- 1. Tell Meta exactly what URL you are sharing -->
-  <meta property="og:url" content="https://behaviortracing.com/" />
-  
-  <!-- 2. Your custom preview title -->
-  <meta property="og:title" content="Your Custom Headline" />
-  
-  <!-- 3. Your custom preview description -->
-  <meta property="og:description" content="This is the exact description that will display underneath your title." />
-  
-  <!-- 4. Point directly to your renamed JPG image (Must be a full absolute URL) -->
-  <meta property="og:image" content="https://behavioraltracing.com/og-preview.jpg" />
-  
-  <!-- 5. Image dimensions and JPG mime-type metadata -->
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:type" content="image/jpeg" /> <!-- Correct mime-type for .jpg files -->
-
-  <!-- 6. Website type declaration -->
-  <meta property="og:type" content="website" />
-</head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FLOCK and AI, the makings of a dystopian nightmare</title>
     <meta name="description" content="An in-depth investigation into how predictive AI, FLOCK physical cameras, and data brokers are used against individual privacy. Learn how to opt out.">
 
+    <!-- Google AdSense & Analytics -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3870227120860587" crossorigin="anonymous"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PQ5K3DCJ83"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-PQ5K3DCJ83');
+    </script>
+
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://behavioraltracing.com/"> <meta property="og:title" content="FLOCK and AI: The Makings of a Dystopian Nightmare">
+    <meta property="og:url" content="https://behavioraltracing.com/">
+    <meta property="og:title" content="FLOCK and AI: The Makings of a Dystopian Nightmare">
     <meta property="og:description" content="An in-depth investigation into how predictive AI, FLOCK physical cameras, and data brokers are used against individual privacy.">
-    <meta property="og:image" content="https://behavioraltracing.com/preview.jpg"> <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://behavioraltracing.com/"> <meta name="twitter:title" content="FLOCK and AI: The Makings of a Dystopian Nightmare">
+    <meta property="og:image" content="https://behavioraltracing.com/og-preview.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://behavioraltracing.com/">
+    <meta name="twitter:title" content="FLOCK and AI: The Makings of a Dystopian Nightmare">
     <meta name="twitter:description" content="An in-depth investigation into how predictive AI, FLOCK physical cameras, and data brokers are used against individual privacy.">
-    <meta name="twitter:image" content="https://behavioraltracing.com/preview.jpg"> <style>
+    <meta name="twitter:image" content="https://behavioraltracing.com/og-preview.jpg">
+
+    <style>
         /* CSS RESET & THEME VARIABLES */
         :root {
-            --bg-primary: #0a0a0c;      /* Pure, deep obsidian black */
-            --bg-secondary: #121216;    /* Elevated dark card background */
-            --border-color: #2b1a1a;    /* Subtle, blood-tinted dark border */
-            --text-primary: #f0f6fc;    /* Pure off-white high contrast text */
-            --text-muted: #8e9297;      /* Muted ash-grey for body prose */
-            --accent-red: #ff3333;      /* High-visibility warning red */
-            --accent-crimson: #cc0000;  /* Deeper crimson for links and active boundaries */
-            --accent-warn: #ff6600;     /* Threat orange for alerts */
-            --glow-red: rgba(255, 51, 51, 0.3); /* Soft red alert glow */
+            --bg-primary: #0a0a0c;      /* Deep obsidian black */
+            --bg-secondary: #121216;    /* Dark card background */
+            --border-color: #2b1a1a;    /* Subtle dark border */
+            --text-primary: #f0f6fc;    /* Off-white high contrast text */
+            --text-muted: #8e9297;      /* Muted ash-grey for prose */
+            --accent-red: #ff3333;      /* Warning red */
+            --accent-crimson: #cc0000;  /* Deeper crimson */
+            --accent-warn: #ff6600;     /* Threat orange */
+            --glow-red: rgba(255, 51, 51, 0.3); /* Red alert glow */
         }
 
         * {
@@ -73,12 +61,12 @@
             padding: 0 15px;
         }
 
-        /* HIGH-PROMINENCE WARNING HEADER BLOCK */
+        /* HEADER BLOCK */
         header {
             max-width: 1000px;
             margin: 0 auto;
             padding: 40px 0 25px 0;
-            border-bottom: 3px solid var(--accent-red); /* Thick red warning line */
+            border-bottom: 3px solid var(--accent-red);
         }
 
         .logo-area {
@@ -89,7 +77,6 @@
             margin-bottom: 30px;
         }
 
-        /* Glaring, high-impact title typography */
         .logo-area h1 {
             font-size: 2.8rem;
             font-weight: 900;
@@ -110,7 +97,6 @@
             text-shadow: 0 0 15px var(--glow-red);
         }
 
-        /* Critical subtitle descriptor */
         .header-subtitle {
             font-size: 1.2rem;
             font-weight: 700;
@@ -133,7 +119,7 @@
             background: none;
             border: 1px solid var(--border-color);
             color: var(--text-muted);
-            padding: 10px 20px;
+            padding: 10px 18px;
             border-radius: 6px;
             cursor: pointer;
             font-size: 0.95rem;
@@ -303,7 +289,6 @@
             margin: 25px 0;
         }
 
-        /* ADSENSE PLACEHOLDERS */
         .ad-banner {
             background-color: #121216;
             border: 1px dashed var(--border-color);
@@ -315,6 +300,45 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             border-radius: 6px;
+        }
+
+        /* FORM INPUT STYLES */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--accent-red);
+            box-shadow: 0 0 10px var(--glow-red);
+        }
+
+        /* FORCE SOLID BLACK TEXT INSIDE GENERATED DOCUMENT BOX ON SCREEN */
+        #documentOutput, 
+        #documentOutput *, 
+        #documentOutput strong, 
+        #documentOutput p, 
+        #documentOutput h2, 
+        #documentOutput div,
+        #documentOutput td {
+            color: #000000 !important;
         }
 
         /* FOOTER */
@@ -331,16 +355,86 @@
         footer a {
             color: var(--accent-red);
             text-decoration: none;
-            margin: 0 10px;
+            margin: 0 8px;
         }
 
         footer a:hover {
             text-decoration: underline;
         }
+
+        /* STRICT SINGLE-PAGE PRINT OPTIMIZATION (PROPORTIONALLY BALANCED) */
+        @media print {
+            @page {
+                size: letter portrait;
+                margin: 0.5in;
+            }
+
+            html, body {
+                height: 100%;
+                background: #ffffff !important;
+                color: #000000 !important;
+                overflow: hidden;
+            }
+
+            body * {
+                visibility: hidden;
+            }
+
+            #documentOutput, 
+            #documentOutput * {
+                visibility: visible;
+            }
+
+            #documentOutput {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                border: none !important;
+                box-shadow: none !important;
+                background: #ffffff !important;
+                color: #000000 !important;
+            }
+
+            .legal-doc-container {
+                page-break-after: avoid !important;
+                page-break-inside: avoid !important;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            .legal-doc-container h2 {
+                font-size: 1.6rem !important;
+                margin-bottom: 6px !important;
+            }
+
+            .legal-doc-container table {
+                font-size: 0.95rem !important;
+                margin-bottom: 16px !important;
+            }
+
+            .legal-doc-container p {
+                font-size: 0.92rem !important;
+                line-height: 1.5 !important;
+                margin-bottom: 14px !important;
+            }
+
+            .signature-block {
+                margin-top: 45px !important;
+                font-size: 0.95rem !important;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+        }
     </style>
 </head>
 <body>
-
     <header>
         <div class="logo-area">
             <h1>FLOCK and AI<span class="accent-orange">:</span> <br><span class="accent-red-bright">The Makings of a Dystopian Nightmare</span></h1>
@@ -352,13 +446,15 @@
             <button onclick="navigateTo('flock')">FLOCK Dragnet</button>
             <button onclick="navigateTo('internet')">Internet Panopticon</button>
             <button onclick="navigateTo('control')">The Control Grid</button>
+            <button onclick="navigateTo('form')">Generate Notice</button>
+            <button onclick="navigateTo('donate')">Support & Donate</button>
         </nav>
     </header>
 
     <main>
-
         <div class="ad-banner">Advertisement - Sponsor Support</div>
 
+        <!-- PAGE 1: HOME -->
         <section id="page-home" class="page active">
             <div class="hero">
                 <h2>The Invisible Dragnet</h2>
@@ -366,8 +462,7 @@
             </div>
 
             <h2>The Triad of Modern Intrusion</h2>
-            <p>For centuries, tracking a human being required massive, active coordination. It meant hiring private eyes, tailing cars, or filing physical requests. Today, the process of documenting, cataloging, and exploiting your existence has been automated and commercialized.</p>
-            
+            <p>For centuries, tracking a human being required massive, active coordination. Today, the process of documenting, cataloging, and exploiting your existence has been automated and commercialized.</p>
             <p>This systematic network operates through three powerful technological mechanisms. It knows where you drive, what you search, and uses artificial intelligence to exploit how you think. This site exposes these three pillars in explicit detail:</p>
 
             <div class="card-grid">
@@ -389,9 +484,10 @@
             </div>
         </section>
 
+        <!-- PAGE 2: AI MANIPULATION -->
         <section id="page-ai" class="page">
             <h2>Algorithmic Behavioral Modification</h2>
-            <p>Artificial Intelligence is rarely framed as a tool of active social and psychological control. Consumers are told AI exists to draft emails, generate artistic imagery, or "curate helpful feeds." In reality, modern enterprise machine learning is highly specialized in <strong>predictive behavioral engineering</strong>—analyzing raw personal telemetry to exploit and modify human action.</p>
+            <p>Artificial Intelligence is rarely framed as a tool of active social and psychological control. Consumers are told AI exists to draft emails or generate artistic imagery. In reality, modern enterprise machine learning is highly specialized in <strong>predictive behavioral engineering</strong>—analyzing raw personal telemetry to exploit and modify human action.</p>
 
             <div class="alert-box">
                 <h4>Predictive Vulnerability Profiling</h4>
@@ -399,181 +495,399 @@
             </div>
 
             <h3>The Psychometric Blueprint: Machine-Read Psychology</h3>
-            <p>By connecting thousands of seemingly unrelated data points—such as typing speed, scroll depth, late-night music selections, and app-switching frequency—commercial AI engines reconstruct psychological dossiers using the OCEAN model (Openness, Conscientiousness, Extraversion, Agreeableness, and Neuroticism). Once your unique vulnerabilities are mapped, targeted algorithms adjust in real time to trigger behavioral outcomes.</p>
-
-            <p>This is not simple marketing; it is mathematical psychological targeting. If an algorithm identifies a target high in Neuroticism and low in Conscientiousness, it does not show them standard ads. It serves them high-stress, urgency-based prompts designed to bypass rational friction. Conversely, someone high in Openness is fed narrative-driven, discovery-based prompts to exploit their curiosity.</p>
+            <p>By connecting thousands of data points—such as typing speed, scroll depth, late-night music selections, and app-switching frequency—commercial AI engines reconstruct psychological dossiers using the OCEAN model (Openness, Conscientiousness, Extraversion, Agreeableness, and Neuroticism). Once mapped, targeted algorithms adjust in real time to trigger behavioral outcomes.</p>
 
             <div class="info-card">
                 <h3>How AI Exploits Your Vulnerabilities:</h3>
                 <ul>
-                    <li><strong>The Anxiety Loop:</strong> Algorithms identify search terms related to physical health fears or financial insecurity and immediately boost advertisements that play directly on those anxieties, keeping you in an active state of panic to drive impulsive buying.</li>
-                    <li><strong>Impulsivity Triggers:</strong> High-frequency retail algorithms analyze your mouse movement speed. If the AI detects erratic, rapid movement (often indicating distraction or tiredness), it triggers high-pressure, artificial scarcity warnings ("Only 1 left in stock!") to pressure you before logical reasoning takes over.</li>
+                    <li><strong>The Anxiety Loop:</strong> Algorithms identify search terms related to physical health fears or financial insecurity and boost advertisements that play directly on those anxieties to drive impulsive decisions.</li>
+                    <li><strong>Impulsivity Triggers:</strong> High-frequency retail algorithms analyze mouse movement. Rapid, erratic movement triggers high-pressure scarcity warnings ("Only 1 left in stock!") before logical reasoning takes over.</li>
                 </ul>
             </div>
 
             <h3>Dynamic Price Gouging & Stranded User Pricing</h3>
-            <p>In a pure free-market economy, price is dictated by supply and demand. In the AI era, price is dictated by personal desperation. Rideshare applications, hotel booking networks, and flight aggregate search engines run advanced machine learning models that assess your location, physical destination, and device metrics.</p>
-            
-            <p>If the AI detects that your mobile device's battery life is below 10% (indicating a high probability of being stranded) and that you are miles away from your home zip code, it can dynamically inflate travel costs. The algorithm knows that your choice is no longer logical, but survival-driven, allowing platforms to capture maximum economic rent at your direct expense.</p>
-
-            <h3>The Rage Economy & Algorithmic Addiction</h3>
-            <p>Social media feeds are not designed to optimize your happiness; they are designed to hijack your attention. Early AI models calculated that positive content inspires users to sign off and engage with the real world. Conversely, negative emotions—such as moral outrage, indignation, jealousy, and fear—keep users trapped on screens up to four times longer.</p>
-            
-            <p>As a result, modern AI sorting engines prioritize toxic or highly polarizing content to your personal feed, deliberately generating mental distress and societal division because those emotional states remain the most profitable to monetize.</p>
-
-            <h3>Micro-Targeting and Demobilization</h3>
-            <p>At its most dangerous extreme, AI behavioral modification moves from commerce to civic engineering. Data-fueled algorithms can identify key groups of voters during elections. Instead of trying to convince these voters to change their minds, the AI identifies individuals prone to defeatism or fatigue. It then floods their feeds with targeted negative stories, confusing narratives, and systemic complaints designed to quietly convince them that participation is futile—demobilizing them and shaping political outcomes without firing a single shot.</p>
+            <p>In the AI era, price is dictated by personal desperation. Rideshare applications, hotel booking networks, and flight search engines run machine learning models that assess location, destination, and device battery level. If your battery drops below 10% away from home, algorithms can dynamically inflate travel costs when survival instinct replaces bargaining power.</p>
         </section>
 
+        <!-- PAGE 3: FLOCK DRAGNET -->
         <section id="page-flock" class="page">
-            <h2>The Street-Level Spy Grid: FLOCK Safety</h2>
-            <p>If you look closely at light poles and traffic lights in your community, you will notice sleek, solar-powered cameras pointed directly at the road. Many belong to <strong>Flock Safety</strong>, a private surveillance enterprise that has blanketed suburbs, subdivisions, and highway exits across the United States.</p>
+            <h2>The Street-Level Spy Grid: FLOCK Safety & Mobile Sensors</h2>
+            <p>If you look closely at light poles and traffic lights in your community, you will notice sleek, solar-powered cameras pointed directly at the road. Many belong to <strong>Flock Safety</strong>, alongside an expanding array of mobile trailers, police cruiser roof mounts, and municipal optical sensors that blanket public thoroughfares.</p>
 
             <div class="alert-box">
                 <h4>The Death of the Search Warrant</h4>
-                <p>Flock uploads every piece of captured visual data into a centralized cloud catalog called FlockOS. Any local police department or subscriber can run searches across this massive nationwide system, tracking an innocent individual's car through dozens of states without ever requesting a judge for a search warrant.</p>
+                <p>Flock and associated camera platforms upload captured visual telemetry into centralized cloud catalogs like FlockOS. Any participating agency or subscriber can run searches across this massive nationwide system, tracking an innocent individual's vehicle and personal movements across municipalities without ever requesting a search warrant.</p>
             </div>
 
-            <h3>AI-Powered Vehicle Fingerprinting</h3>
-            <p>The FLOCK network does not simply capture license plates. Its specialized visual recognition models build a digital fingerprint of every passing car. The system continuously logs and indexes:</p>
-            <ul>
-                <li><strong>Structural Aberrations:</strong> Dents, rust patterns, and broken taillights.</li>
-                <li><strong>Personal Identifiers:</strong> Custom roof racks, custom wheels, bumper stickers, and unique window decals.</li>
-                <li><strong>Geographic Trajectories:</strong> The precise direction, time, and frequency a vehicle passes a camera.</li>
-                <li><strong>Internal Occupancy:</strong> While marketed as license-plate readers, the high-resolution nature of the captures increasingly records the visual characteristics of the front-seat passengers.</li>
-            </ul>
-            <p>This system allows private institutions or law enforcement to search for arbitrary descriptions like "black SUV with a bumper sticker on the left rear trunk" and generate a comprehensive map of where that vehicle lives, works, and travels.</p>
-
-            <h3>The Profound Dangers of Private Dragnet Infrastructure</h3>
-            <p>Because FLOCK is a private company rather than a government entity, it operates in a legislative gray area, bypassing traditional constitutional limits on public surveillance. This introduces severe systemic threats to civil liberties:</p>
-            
-            <ul>
-                <li><strong>The Erosion of the Fourth Amendment:</strong> The U.S. Constitution protects citizens from unreasonable searches. However, because you are driving on a "public road," private networks argue that you have no expectation of privacy. By keeping a permanent, searchable 30-day log of millions of law-abiding citizens, FLOCK runs an ongoing virtual dragnet that treats everyone as a permanent suspect.</li>
-                <li><strong>Lack of Regulatory Oversight:</strong> Unlike state agencies, a private entity is not bound by Freedom of Information Act (FOIA) requests in the same way, shielding their internal algorithms, data sharing policies, and security vulnerabilities from deep public scrutiny.</li>
-                <li><strong>Mission Creep:</strong> A system built to "solve local property crime" is easily scaled. FLOCK is expanding rapidly. Neighborhood HOAs, private business parks, and strip malls are buying and linking their own cameras directly into the police network. This creates a highly localized, privatized surveillance state where private citizens can track other citizens under the guise of neighborhood watch safety.</li>
-                <li><strong>The Danger of Database Hacks & Misidentification:</strong> If a license plate is mistyped or misidentified by FLOCK's computer vision, the system can flag an innocent driver as a high-risk criminal on a shared hotlist. This triggers high-stress, high-danger police stops, placing innocent lives at physical risk due to algorithmic error.</li>
-            </ul>
+            <h3>AI-Powered Vehicle Fingerprinting & Mobile Tracking</h3>
+            <p>Modern surveillance networks do not simply capture license plates. Specialized visual recognition models build a digital fingerprint of every passing car, logging structural aberrations (dents, rust), custom racks, sticker placements, movement vectors, and front-seat passenger profiles from stationary poles, mobile trailers, and patrol vehicles alike.</p>
         </section>
 
+        <!-- PAGE 4: INTERNET PANOPTICON -->
         <section id="page-internet" class="page">
             <h2>The Digital Footprint Bazaar</h2>
-            <p>The illusion of online privacy is one of the most highly funded narratives in the technology sector. Users are told that "cookies can be blocked," "history can be cleared," and "incognito browsing protects identity." In truth, digital tracking networks have evolved far beyond cookie files, building invasive, persistent methods to catalog your online life.</p>
+            <p>The illusion of online privacy is one of the most highly funded narratives in the technology sector. Users are told that cookies can be blocked or history cleared. In truth, digital tracking networks have evolved far beyond basic cookie files.</p>
 
             <div class="alert-box">
                 <h4>The Myth of "Incognito"</h4>
-                <p>Incognito mode merely prevents your local web browser from saving your history on your physical device. It does absolutely nothing to stop your internet service provider, search engines, or third-party web trackers from monitoring and logging your IP address, DNS requests, and hardware configuration.</p>
+                <p>Incognito mode merely prevents your local web browser from saving history on your physical device. It does absolutely nothing to stop your internet service provider, search engines, or third-party web trackers from logging your IP address and hardware configuration.</p>
             </div>
 
             <h3>Canvas Fingerprinting: The Invisible Tracker</h3>
-            <p>Because traditional cookies are easily cleared, data companies have deployed <strong>Canvas Fingerprinting</strong>. When you visit a page utilizing this technology, background script tags quietly direct your browser to draw a hidden, highly complex geometric shape in the canvas element.</p>
-            
-            <p>Due to micro-variations in your computer's graphics processor, installed operating system fonts, hardware drivers, and system clock, your computer draws this shape subtly differently than any other machine in the world. The algorithm reads this distinct execution to generate a unique, mathematical hash value. This hash serves as a permanent, tracking serial number that tags your device wherever you browse, bypassing all cookie settings.</p>
-
-            <div class="info-card">
-                <h3>Shadowy Intermediaries: The Data Brokers</h3>
-                <p>Every website click, credit card swipe, vehicle registry entry, and public record filing is bought, organized, and packaged by central data consolidators like <strong>LexisNexis, Acxiom, and Oracle</strong>. These institutions run silent databases storing thousands of points of interest on almost every adult citizen. They bundle these records into highly descriptive marketing profiles with names like:</p>
-                <ul>
-                    <li><strong>"Diabetes Concerns":</strong> Sold to health insurance companies looking to indirectly adjust premiums or target high-cost health coverage options.</li>
-                    <li><strong>"Fragile Seniors":</strong> Targeted by high-interest cash loan companies and predatory medical supplement sellers.</li>
-                    <li><strong>"Payday Loan Prospects":</strong> Sourced by high-frequency subprime lenders during national or seasonal economic down-cycles.</li>
-                </ul>
-            </div>
-
-            <h3>The Background Spy: Mobile App SDKs</h3>
-            <p>Your physical movements are tied directly to this digital web through your mobile phone. When you install free tools—such as flashlight utilities, step counters, or weather widgets—you frequently accept generic privacy policies. Hidden inside these apps are pre-packaged code segments called Software Development Kits (SDKs).</p>
-            
-            <p>These SDKs continuously collect precise GPS location logs, neighboring Wi-Fi network IDs, and local Bluetooth beacon signals in the background. This coordinates your active physical address with your online identity, creating a flawless 360-degree loop of surveillance that updates every second of your day.</p>
+            <p>Because traditional cookies are easily cleared, data companies deploy <strong>Canvas Fingerprinting</strong>. Background scripts direct your browser to render a hidden geometric shape. Micro-variations in your graphics processor, fonts, and system drivers generate a unique mathematical hash that tags your device across the web permanently.</p>
         </section>
 
+        <!-- PAGE 5: CONTROL GRID -->
         <section id="page-control" class="page">
             <h2>The Unified Panopticon</h2>
-            <p>When examined individually, predictive AI, physical tracking cameras like FLOCK, and internet data brokers appear to be isolated issues. This separation is a comforting illusion. In reality, these three pillars are actively merging into a singular, automated **Total Control Grid**.</p>
-            
             <p>When physical movement, digital footprints, and predictive machine learning are linked, the result is an inescapable loop of absolute individual tracking and social compliance.</p>
 
             <div class="alert-box">
-                <h4>Automated Social Control vs. Directed Weaponization</h4>
-                <p>The ultimate risk of this unified grid is twofold: it functions as an autonomous, self-correcting compliance system, and it serves as a highly precise, manned weapon that can be directed by motivated human actors to carry out targeted harassment, political retribution, or administrative suppression.</p>
+                <h4>Automated Control vs. Directed Weaponization</h4>
+                <p>The ultimate risk of this unified grid is twofold: it functions as an autonomous, self-correcting compliance system, and it serves as a highly precise, manned weapon that can be directed by motivated human actors to carry out targeted harassment or administrative suppression.</p>
             </div>
+        </section>
 
-            <h3>1. The Autonomous Mechanism</h3>
-            <p>Left to operate on autopilot, the grid uses automated feedback loops to quietly, invisibly enforce conformity. Systems measure behavioral anomalies, flag deviants, and apply minor administrative friction (such as lower credit ratings, dynamic price inflation, or throttled search results) to steer public behavior back to baseline without needing human supervision.</p>
-
-            <h3>2. The Manned Threat: Directed Human Weaponization</h3>
-            <p>The system is not just an unfeeling machine; it has controls, administrators, and backdoor entry keys. When access to this multi-dimensional apparatus is concentrated, it invites systemic abuse by those with institutional, political, or corporate authority. This dynamic changes surveillance from a passive net into a directed spear.</p>
-
-            <p>Under this manned paradigm, several high-risk vectors of abuse materialize:</p>
-            
-            <ul>
-                <li><strong>Insider Threats and Targeted Harassment:</strong> Law enforcement and corporate network administrators with credentialed access can—and historically have—abused databases to track ex-spouses, investigative journalists, or personal adversaries. With tools like FLOCK and real-time SDK location data, this stalker-like capability is amplified to a global scale.</li>
-                <li><strong>Selective Administrative Retribution:</strong> Instead of executing high-profile, public crackdowns that invite backlash, operators can manually target specific dissenters or whistleblowers. The system allows an operator to quietly toggle a "risk indicator," triggering an artificial, coordinated audit across multiple fronts: tax verification, vehicle search hotlists, and professional license freezes.</li>
-                <li><strong>Targeted Dynamic Isolation:</strong> If an individual is deemed a high-value threat to an institution, operators can manually isolate them. By feeding the user's personal identity vector into dynamic pricing and access algorithms, the targeted individual can be quietly blacklisted from booking accommodations, purchasing transportation tickets, or accessing online commerce platforms.</li>
-            </ul>
+        <!-- PAGE 6: GENERATE NOTICE & DEMAND FORMS -->
+        <section id="page-form" class="page">
+            <h2>Legal Document Generator</h2>
+            <p>Use this interactive tool to generate formatted, single-page legal instruments ready for print or PDF export.</p>
 
             <div class="info-card">
-                <h3>The Control Loop Sequence</h3>
-                <ol>
-                    <li><strong>The Digital Blueprint:</strong> You visit websites and read articles criticizing a local corporate monopoly or political decision. Data brokers log this behavior, cataloging your IP address, device fingerprints, and sentiment profile.</li>
-                    <li><strong>The Physical Association:</strong> You decide to attend a peaceful local assembly or meeting. As your car approaches the designated venue, street-level **FLOCK cameras** log your license plate and vehicle fingerprint, tying your physical presence directly to your digital critique profile.</li>
-                    <li><strong>The AI Evaluation:</strong> An enterprise machine learning model ingests this combined dataset. It flags you as a "high-risk organizer" or "systemic compliance threat." No human ever reviews your file; you are simply assigned a modified numeric risk score.</li>
-                    <li><strong>The Directed Intervention:</strong> An operator with administrative access reviews the flagged cohort. Utilizing the real-time FLOCK dragnet and mobile app telemetry, they manually authorize targeted administrative pressure, systematically neutralizing the organizing group's capacity to communicate, travel, or fundraise.</li>
-                </ol>
+                <h3 style="margin-top:0;">Fill In Your Information</h3>
+                <form id="noticeForm">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+                        <div class="form-group">
+                            <label>Full Legal Name:</label>
+                            <input type="text" id="fullName" required placeholder="e.g. John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label>Jurisdiction / Municipality:</label>
+                            <input type="text" id="jurisdiction" required placeholder="e.g. Town of Barnstable, MA">
+                        </div>
+                        <div class="form-group">
+                            <label>Vehicle Registration / Plate #:</label>
+                            <input type="text" id="vehiclePlate" placeholder="e.g. 1ABC23 (Optional)">
+                        </div>
+                        <div class="form-group">
+                            <label>Mailing Address:</label>
+                            <input type="text" id="userAddress" required placeholder="Street, City, State, ZIP">
+                        </div>
+                    </div>
+
+                    <!-- ACTION BUTTONS -->
+                    <div style="display: flex; gap: 15px; margin-top: 20px; flex-wrap: wrap;">
+                        <button type="button" onclick="generateNonConsentNotice(event)" style="background: #222226; color: #ffffff; border: 1px solid var(--border-color); padding: 12px 20px; font-weight: bold; border-radius: 6px; cursor: pointer; font-size: 0.95rem; flex: 1;">
+                            Generate Notice of Non-Consent 📄
+                        </button>
+                        <button type="button" onclick="generateLegalDemand(event)" style="background: var(--accent-red); color: #ffffff; border: none; padding: 12px 20px; font-weight: bold; border-radius: 6px; cursor: pointer; font-size: 0.95rem; flex: 1;">
+                            Generate Formal Legal Demand ⚖️
+                        </button>
+                    </div>
+                </form>
             </div>
 
-            <h3>The Chilling Effect and Self-Censorship</h3>
-            <p>The most terrifying aspect of the Total Control Grid is that it does not need to arrest you to control you. Once citizens realize that their physical travels, digital habits, and financial health are linked directly to their compliance, they begin to self-censor.</p>
-            
-            <p>You stop driving to certain neighborhoods, you stop searching for sensitive medical terms, and you stop speaking with associates who hold "unapproved" opinions. The system achieves complete, voluntary submission by threatening to quietly isolate and financially ruin anyone who wanders outside of the predetermined algorithmic boundaries.</p>
+            <!-- Generated Document Display Box -->
+            <div id="documentOutput" style="display:none; background: #ffffff; color: #000000 !important; padding: 45px; border-radius: 8px; margin-top: 30px; font-family: 'Times New Roman', Times, serif; line-height: 1.5; border: 1px solid #ccc; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+            </div>
+        </section>
+
+        <!-- PAGE 7: DONATION & SUPPORT -->
+        <section id="page-donate" class="page">
+            <h2>Support Independent Rights Defense</h2>
+            <p>Documenting surveillance installations, maintaining open-source privacy infrastructure, and building free legal tools requires continuous effort and resources. If you find these materials valuable, consider supporting the initiative.</p>
+
+            <div class="alert-box">
+                <h4>100% Independent & Reader-Supported</h4>
+                <p>This project operates entirely free from corporate sponsorship or government funding. Every contribution directly funds domain maintenance, infrastructure, and investigative field work.</p>
+            </div>
+
+            <div class="card-grid">
+                <!-- Stripe Card Link -->
+                <div class="card" style="cursor: default;">
+                    <h3>Card Support (Stripe)</h3>
+                    <p>Make a direct one-time or recurring contribution via credit card, Apple Pay, or Google Pay.</p>
+                    <a href="https://buy.stripe.com/YOUR_STRIPE_PAYMENT_LINK" target="_blank" rel="noopener" class="btn-link" style="text-align: center; display: block; margin-top: 15px; padding: 10px; background: var(--accent-crimson); color: white; border-radius: 6px; text-decoration: none;">
+                        Donate via Card →
+                    </a>
+                </div>
+
+                <!-- Ko-fi / Micro-donations -->
+                <div class="card" style="cursor: default;">
+                    <h3>Micro-Donations</h3>
+                    <p>Support through quick micro-donations via Ko-fi or PayPal without registering an account.</p>
+                    <a href="https://ko-fi.com/YOUR_PROFILE" target="_blank" rel="noopener" class="btn-link" style="text-align: center; display: block; margin-top: 15px; padding: 10px; background: var(--accent-warn); color: white; border-radius: 6px; text-decoration: none;">
+                        Support on Ko-fi →
+                    </a>
+                </div>
+
+                <!-- Private Crypto -->
+                <div class="card" style="cursor: default;">
+                    <h3>Private / Crypto</h3>
+                    <p>For anonymous support, contribute directly to privacy-preserving digital asset wallets.</p>
+                    <div style="margin-top: 15px; font-size: 0.8rem; word-break: break-all; background: var(--bg-primary); padding: 10px; border-radius: 4px; border: 1px solid var(--border-color);">
+                        <strong>Monero (XMR):</strong><br>
+                        <span style="color: var(--text-muted);">48x...YOUR_XMR_WALLET_ADDRESS</span>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <div class="ad-banner" style="margin-top: 40px;">Advertisement - Sponsor Support</div>
-
     </main>
-<div style="max-width: 1000px; margin: 40px auto; text-align: center; padding: 0 15px;">
-    <img src="photo.png" alt="Privacy analysis visual representation" style="max-width: 1000px; width: 100%; height: auto; border: 1px solid var(--border-color); border-radius: 8px;">
-</div>
+
+    <div style="max-width: 1000px; margin: 40px auto; text-align: center; padding: 0 15px;">
+        <img src="photo.png" alt="Privacy analysis visual representation" style="max-width: 1000px; width: 100%; height: auto; border: 1px solid var(--border-color); border-radius: 8px;">
+    </div>
+
     <footer>
-        <p>&copy; 2026 Post-Privacy Project. All Content Written Under Creative Commons Attribution-NonCommercial ShareAlike Licence.</p>
+        <p>&copy; 2026 Post-Privacy Project. All Content Written Under Creative Commons Attribution-NonCommercial ShareAlike License.</p>
         <p style="margin-top: 10px;">
             <a href="#" onclick="navigateTo('home'); return false;">Home</a> | 
+            <a href="#" onclick="navigateTo('ai'); return false;">AI Manipulation</a> | 
+            <a href="#" onclick="navigateTo('flock'); return false;">FLOCK Dragnet</a> | 
+            <a href="#" onclick="navigateTo('internet'); return false;">Internet Panopticon</a> | 
             <a href="#" onclick="navigateTo('control'); return false;">The Control Grid</a> | 
-            <a href="#" onclick="alert('This site is an educational blueprint highlighting the intersection of AI, physical cameras, and digital tracking. No user cookies are harvested during your visit.'); return false;">Privacy Policy</a>
+            <a href="#" onclick="navigateTo('form'); return false;">Generate Notice</a> | 
+            <a href="#" onclick="navigateTo('donate'); return false;">Support & Donate</a>
         </p>
     </footer>
 
     <script>
+        // Tab Navigation Logic
         function navigateTo(pageId) {
-            // 1. Hide all pages
             const pages = document.querySelectorAll('.page');
             pages.forEach(page => page.classList.remove('active'));
 
-            // 2. Show selected page
+            const navButtons = document.querySelectorAll('#mainNav button');
+            navButtons.forEach(btn => btn.classList.remove('active'));
+
             const targetPage = document.getElementById('page-' + pageId);
             if (targetPage) {
                 targetPage.classList.add('active');
             }
 
-            // 3. Update active nav button
-            const navButtons = document.querySelectorAll('#mainNav button');
-            navButtons.forEach(btn => btn.classList.remove('active'));
-
-            // Map button indices to navigation
-            const pageMap = {
-                'home': 0,
-                'ai': 1,
-                'flock': 2,
-                'internet': 3,
-                'control': 4
-            };
-            
-            if (navButtons[pageMap[pageId]]) {
-                navButtons[pageMap[pageId]].classList.add('active');
+            const activeBtn = Array.from(navButtons).find(btn => 
+                btn.getAttribute('onclick').includes(`'${pageId}'`)
+            );
+            if (activeBtn) {
+                activeBtn.classList.add('active');
             }
 
-            // 4. Scroll to top of content smoothly
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-    </script>
 
+        // Validate Form Input
+        function validateInputs() {
+            const name = document.getElementById('fullName').value.trim();
+            const jurisdiction = document.getElementById('jurisdiction').value.trim();
+            const address = document.getElementById('userAddress').value.trim();
+
+            if (!name || !jurisdiction || !address) {
+                alert("Please fill in all required fields (Name, Jurisdiction, and Address).");
+                return false;
+            }
+            return true;
+        }
+
+        // 1. STANDALONE NOTICE OF NON-CONSENT GENERATOR (PROPORTIONALLY FILL PAGE)
+        function generateNonConsentNotice(event) {
+            event.preventDefault();
+            if (!validateInputs()) return;
+
+            const name = document.getElementById('fullName').value;
+            const jurisdiction = document.getElementById('jurisdiction').value;
+            const plate = document.getElementById('vehiclePlate').value || "N/A - General Citizen / Pedestrian";
+            const address = document.getElementById('userAddress').value;
+            const today = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+            const outputDiv = document.getElementById('documentOutput');
+            outputDiv.style.display = 'block';
+
+            outputDiv.innerHTML = `
+                <div class="legal-doc-container">
+                    <div>
+                        <!-- HEADER -->
+                        <div style="text-align: center; margin-bottom: 22px; border-bottom: 2px solid #000; padding-bottom: 12px;">
+                            <h2 style="font-size: 1.65rem; font-weight: bold; margin-bottom: 5px; border: none; text-transform: uppercase; color: #000000 !important; letter-spacing: 1px; font-family: 'Times New Roman', Times, serif;">Formal Notice of Non-Consent</h2>
+                            <p style="font-size: 0.9rem; color: #222222 !important; font-style: italic; margin: 0; font-family: 'Times New Roman', Times, serif;">EXPRESS REVOCATION OF PERMISSION FOR AUTOMATED SURVEILLANCE & DATA HARVESTING</p>
+                        </div>
+
+                        <!-- METADATA TABLE -->
+                        <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; font-family: 'Times New Roman', Times, serif; line-height: 1.45;">
+                            <tr>
+                                <td style="width: 20%; font-weight: bold; padding: 4px 0; vertical-align: top;">DATE:</td>
+                                <td style="padding: 4px 0; vertical-align: top;">${today}</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; padding: 4px 0; vertical-align: top;">TO:</td>
+                                <td style="padding: 4px 0; vertical-align: top;">Municipal Authorities of ${jurisdiction}, Police Chief/Department, Municipal Administrators, and Surveillance Vendors (including Flock Safety / Flock Group Inc. and allied network operators)</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; padding: 4px 0; vertical-align: top;">JURISDICTION:</td>
+                                <td style="padding: 4px 0; vertical-align: top;">${jurisdiction}</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; padding: 4px 0; vertical-align: top;">DECLARANT:</td>
+                                <td style="padding: 4px 0; vertical-align: top;">${name} (${address})</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; padding: 4px 0; vertical-align: top;">IDENTIFIER:</td>
+                                <td style="padding: 4px 0; vertical-align: top;">${plate}</td>
+                            </tr>
+                        </table>
+
+                        <hr style="margin: 15px 0 18px 0; border: 0; border-top: 1px solid #000000;">
+
+                        <!-- BODY SECTIONS -->
+                        <div style="font-size: 0.93rem; color: #000000 !important; text-align: justify; line-height: 1.5; font-family: 'Times New Roman', Times, serif;">
+                            <p style="margin-bottom: 16px; color: #000000 !important;">
+                                <strong style="color: #000000 !important;">1. EXPRESS REVOCATION OF ASSUMED CONSENT & ALL INVASIVE EQUIPMENT:</strong><br>
+                                PLEASE TAKE NOTICE that the undersigned hereby explicitly revokes, rescinds, and nullifies any assumed or implied consent regarding the optical, physical, or electronic monitoring, targeting, tracking, surveillance, recording, or data collection of their person, vehicle, and associates. This revocation explicitly applies to Flock Safety camera networks as well as all similar, related, or ancillary devices and hardware—whether stationary, semi-stationary, mobile, vehicle-mounted (including patrol car systems), quick-deploy trailer units, facial recognition arrays, automated license plate readers (ALPR), speed/traffic enforcement cameras, acoustic monitoring sensors, wireless telemetry/Wi-Fi/Bluetooth sniffers, or aerial drones/UAVs—placed on, along, or overlooking public ways, roads, and rights-of-way capable of monitoring people's movements.
+                            </p>
+
+                            <p style="margin-bottom: 16px; color: #000000 !important;">
+                                <strong style="color: #000000 !important;">2. EQUIVALENCY OF LIVE SURVEILLANCE FEEDS & STORED DATA:</strong><br>
+                                Be advised that real-time optical streaming, transient video feeds, dynamic license plate scans, and unbuffered live optical surveillance constitute the exact same legal and constitutionally actionable intrusion upon privacy as permanent database logging. The act of unconsented capture, optical processing, real-time targeting, and live broadcast produces identical psychological harm, chilling effects, and unlawful invasion of personal autonomy, regardless of data persistence or retention limits.
+                            </p>
+
+                            <p style="margin-bottom: 16px; color: #000000 !important;">
+                                <strong style="color: #000000 !important;">3. REJECTION OF VENDOR DATA BROKERING & MOVEMENT TRACKING:</strong><br>
+                                The declarant explicitly withholds authorization for any live or stored telemetry, optical capture, movement vector analysis, or metadata associated with the designated identifier to be routed through vendor ecosystems (including FlockOS) or shared across municipal, state, federal, or commercial data-sharing grids.
+                            </p>
+
+                            <p style="margin-bottom: 25px; font-style: italic; font-size: 0.88rem; color: #222222 !important;">
+                                This document serves as formal written notice of non-consent. Silence or administrative inaction does not constitute agreement or waiver of rights.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- SIGNATURE BLOCK -->
+                    <div class="signature-block" style="margin-top: 40px; display: flex; justify-content: space-between; color: #000000 !important; font-size: 0.93rem; font-family: 'Times New Roman', Times, serif;">
+                        <div style="width: 58%;">
+                            <p style="margin-bottom: 6px; color: #000000 !important;">____________________________________________________</p>
+                            <p style="color: #000000 !important; margin: 0;"><strong style="color: #000000 !important;">Signature of Declarant</strong></p>
+                            <p style="color: #444444 !important; margin-top: 3px; font-size: 0.88rem;">Printed Name: ${name}</p>
+                        </div>
+                        <div style="width: 35%;">
+                            <p style="margin-bottom: 6px; color: #000000 !important;">____________________________</p>
+                            <p style="color: #000000 !important; margin: 0;"><strong style="color: #000000 !important;">Date</strong></p>
+                        </div>
+                    </div>
+
+                    <!-- PRINT BUTTON -->
+                    <div style="margin-top: 25px; text-align: center;" class="no-print">
+                        <button onclick="window.print()" style="background: #000000; color: #ffffff !important; padding: 12px 28px; border: none; font-weight: bold; border-radius: 4px; cursor: pointer; font-size: 1rem; font-family: sans-serif;">
+                            Print Formal Notice of Non-Consent 🖨️
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            outputDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // 2. STANDALONE LEGAL DEMAND GENERATOR (PROPORTIONALLY FILL PAGE)
+        function generateLegalDemand(event) {
+            event.preventDefault();
+            if (!validateInputs()) return;
+
+            const name = document.getElementById('fullName').value;
+            const jurisdiction = document.getElementById('jurisdiction').value;
+            const plate = document.getElementById('vehiclePlate').value || "N/A - General Citizen / Pedestrian";
+            const address = document.getElementById('userAddress').value;
+            const today = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+            const outputDiv = document.getElementById('documentOutput');
+            outputDiv.style.display = 'block';
+
+            outputDiv.innerHTML = `
+                <div class="legal-doc-container">
+                    <div>
+                        <!-- HEADER -->
+                        <div style="text-align: center; margin-bottom: 20px; border-bottom: 2px solid #000; padding-bottom: 10px;">
+                            <h2 style="font-size: 1.6rem; font-weight: bold; margin-bottom: 4px; border: none; text-transform: uppercase; color: #000000 !important; letter-spacing: 1px; font-family: 'Times New Roman', Times, serif;">Formal Legal Demand & Notice of Liability</h2>
+                            <p style="font-size: 0.88rem; color: #222222 !important; font-style: italic; margin: 0; font-family: 'Times New Roman', Times, serif;">DEMAND FOR HARDWARE REMOVAL, DATA PURGE, & NOTICE OF CIVIL LIABILITY</p>
+                        </div>
+
+                        <!-- METADATA TABLE -->
+                        <table style="width: 100%; border-collapse: collapse; margin-bottom: 18px; font-size: 0.92rem; font-family: 'Times New Roman', Times, serif; line-height: 1.4;">
+                            <tr>
+                                <td style="width: 20%; font-weight: bold; padding: 3px 0; vertical-align: top;">DATE:</td>
+                                <td style="padding: 3px 0; vertical-align: top;">${today}</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; padding: 3px 0; vertical-align: top;">TO:</td>
+                                <td style="padding: 3px 0; vertical-align: top;">Municipal Authorities of ${jurisdiction}, Police Chief/Department, Municipal Administrators, and Surveillance Vendors (including Flock Safety / Flock Group Inc. and operators of public-way tracking devices)</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; padding: 3px 0; vertical-align: top;">JURISDICTION:</td>
+                                <td style="padding: 3px 0; vertical-align: top;">${jurisdiction}</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; padding: 3px 0; vertical-align: top;">FROM:</td>
+                                <td style="padding: 3px 0; vertical-align: top;">${name} (${address})</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; padding: 3px 0; vertical-align: top;">IDENTIFIER:</td>
+                                <td style="padding: 3px 0; vertical-align: top;">${plate}</td>
+                            </tr>
+                        </table>
+
+                        <hr style="margin: 12px 0 15px 0; border: 0; border-top: 1px solid #000000;">
+
+                        <!-- BODY SECTIONS -->
+                        <div style="font-size: 0.90rem; color: #000000 !important; text-align: justify; line-height: 1.45; font-family: 'Times New Roman', Times, serif;">
+                            <p style="margin-bottom: 14px; color: #000000 !important;">
+                                <strong style="color: #000000 !important;">1. DEMAND FOR HARDWARE REMOVAL & DISMANTLING OF TRACKING DEVICES:</strong><br>
+                                Demand is hereby made for the immediate physical uninstallation, removal, deactivation, and permanent removal of all Flock Safety hardware, solar assemblies, Automated License Plate Readers (ALPRs), facial recognition nodes, speed/traffic cameras, mobile camera trailers, vehicle-mounted scanners, acoustic surveillance units, wireless telemetry sniffers, and any similar stationary or mobile devices deployed along public ways and public rights-of-way within ${jurisdiction} that monitor, target, track, surveil, record, or collect movement data on citizens without individual warrants.
+                            </p>
+
+                            <p style="margin-bottom: 14px; color: #000000 !important;">
+                                <strong style="color: #000000 !important;">2. EQUIVALENCY OF LIVE SURVEILLANCE & STORED DATA:</strong><br>
+                                Notice is hereby given that live video streams, real-time telemetry, unbuffered optical feeds, and active movement monitoring carry identical legal liability to retained historical databases. Transient optical capture and live targeting infringe upon constitutional privacy rights and inflict severe psychological harm regardless of whether captured data is permanently stored or temporarily processed.
+                            </p>
+
+                            <p style="margin-bottom: 14px; color: #000000 !important;">
+                                <strong style="color: #000000 !important;">3. DEMAND FOR COMPLETE DATA PURGE & SYSTEM EXCLUSION:</strong><br>
+                                Demand is made that all historical records, trajectory maps, vehicle visual fingerprints, and metadata linked to the undersigned be permanently deleted from local and vendor databases (including FlockOS), and that the declarant's vehicle registration and physical identity be added to a strict opt-out exclusion registry.
+                            </p>
+
+                            <p style="margin-bottom: 14px; color: #000000 !important;">
+                                <strong style="color: #000000 !important;">4. NOTICE OF CIVIL LIABILITY FOR HARMS:</strong><br>
+                                Ongoing, unconsented surveillance and movement tracking cause actionable distress, loss of privacy, and constitutional injury. You are on formal notice of personal and municipal civil liability for all resulting direct, consequential, and psychological damages following receipt of this notice.
+                            </p>
+
+                            <p style="margin-bottom: 20px; font-style: italic; font-size: 0.84rem; color: #222222 !important;">
+                                Issued under penalty of perjury to defend constitutional rights, personal safety, and individual privacy.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- SIGNATURE BLOCK -->
+                    <div class="signature-block" style="margin-top: 35px; display: flex; justify-content: space-between; color: #000000 !important; font-size: 0.90rem; font-family: 'Times New Roman', Times, serif;">
+                        <div style="width: 58%;">
+                            <p style="margin-bottom: 5px; color: #000000 !important;">____________________________________________________</p>
+                            <p style="color: #000000 !important; margin: 0;"><strong style="color: #000000 !important;">Signature of Demanding Party</strong></p>
+                            <p style="color: #444444 !important; margin-top: 2px; font-size: 0.85rem;">Printed Name: ${name}</p>
+                        </div>
+                        <div style="width: 35%;">
+                            <p style="margin-bottom: 5px; color: #000000 !important;">____________________________</p>
+                            <p style="color: #000000 !important; margin: 0;"><strong style="color: #000000 !important;">Date</strong></p>
+                        </div>
+                    </div>
+
+                    <!-- PRINT BUTTON -->
+                    <div style="margin-top: 22px; text-align: center;" class="no-print">
+                        <button onclick="window.print()" style="background: #000000; color: #ffffff !important; padding: 12px 28px; border: none; font-weight: bold; border-radius: 4px; cursor: pointer; font-size: 1rem; font-family: sans-serif;">
+                            Print Legal Demand Document 🖨️
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            outputDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>
