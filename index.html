@@ -5,15 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>TAG MAKER</title>
 
+  <!-- iOS / Apple Home Screen Shortcut Config -->
   <link rel="apple-touch-icon" href="oyster-icon.png">
   <meta name="apple-mobile-web-app-title" content="TAG MAKER">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
 
+  <!-- Android & Chrome Web App Manifest Config -->
   <link rel="manifest" href="manifest.json">
 
+  <!-- Favicon for Standard Web Browsers -->
   <link rel="icon" type="image/png" href="oyster-icon.png">
 
+  <!-- html2canvas library for exact pixel rasterization -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
   <style id="dynamic-print-style">
@@ -395,6 +399,7 @@
       </div>
     </div>
 
+    <!-- Live Preview Tag Container -->
     <div class="preview-section" id="previewContainer">
       <div class="tag size-4x6" id="tag">
         <div class="tag-header">
@@ -459,44 +464,58 @@
     const fields = ['tagSize', 'bizName', 'certNum', 'grantNum', 'harvestDate', 'harvestTime', 'species', 'sizeGrade', 'quantity', 'growingArea', 'sanitaryStatus'];
 
     window.addEventListener('DOMContentLoaded', () => {
+      // Load saved values from storage
       fields.forEach(id => {
         const val = localStorage.getItem('ma_tag_' + id);
         if (val && id !== 'harvestDate' && id !== 'harvestTime') {
-          document.getElementById(id).value = val;
+          const el = document.getElementById(id);
+          if (el) el.value = val;
         }
       });
 
-      const now = new Date();
-      document.getElementById('harvestDate').value = now.toISOString().split('T')[0];
+      // Set default date and time if empty
+      const dateEl = document.getElementById('harvestDate');
+      const timeEl = document.getElementById('harvestTime');
       
-      const hours = String(now.getHours()).padStart(2, '0');
-      const minutes = String(now.getMinutes()).padStart(2, '0');
-      document.getElementById('harvestTime').value = `${hours}:${minutes}`;
+      if (dateEl && !dateEl.value) {
+        dateEl.value = new Date().toISOString().split('T')[0];
+      }
+      if (timeEl && !timeEl.value) {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        timeEl.value = `${hours}:${minutes}`;
+      }
+
+      // Attach event listeners safely after DOM is fully available
+      fields.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+          ['change', 'input'].forEach(evt => {
+            el.addEventListener(evt, () => {
+              updateTag();
+              if (id !== 'harvestDate' && id !== 'harvestTime') {
+                localStorage.setItem('ma_tag_' + id, el.value);
+              }
+            });
+          });
+        }
+      });
 
       updateTag();
     });
 
-    fields.forEach(id => {
-      const el = document.getElementById(id);
-      ['change', 'input'].forEach(evt => {
-        el.addEventListener(evt, () => {
-          updateTag();
-          if (id !== 'harvestDate' && id !== 'harvestTime') {
-            localStorage.setItem('ma_tag_' + id, el.value);
-          }
-        });
-      });
-    });
-
     function formatDate(rawDate) {
       if (!rawDate) return '--';
-      const [year, month, day] = rawDate.split('-');
-      return `${month}/${day}/${year}`;
+      const parts = rawDate.split('-');
+      if (parts.length !== 3) return rawDate;
+      return `${parts[1]}/${parts[2]}/${parts[0]}`;
     }
 
     function formatTime(rawTime) {
       if (!rawTime) return '--';
       let [hours, minutes] = rawTime.split(':');
+      if (!hours || !minutes) return rawTime;
       hours = parseInt(hours, 10);
       const ampm = hours >= 12 ? 'PM' : 'AM';
       hours = hours % 12 || 12;
@@ -505,41 +524,42 @@
 
     function updateTag() {
       const tagElement = document.getElementById('tag');
-      const sizeValue = document.getElementById('tagSize').value;
+      const sizeValue = document.getElementById('tagSize')?.value || '4x6';
       const dynamicStyle = document.getElementById('dynamic-print-style');
+
+      if (!tagElement) return;
 
       tagElement.classList.remove('size-4x6', 'size-3x7', 'size-3x5');
 
       if (sizeValue === '3x5') {
         tagElement.classList.add('size-3x5');
-        dynamicStyle.textContent = '@page { size: 3in 5in; margin: 0; }';
+        if (dynamicStyle) dynamicStyle.textContent = '@page { size: 3in 5in; margin: 0; }';
       } else if (sizeValue === '3x7') {
         tagElement.classList.add('size-3x7');
-        dynamicStyle.textContent = '@page { size: 3in 7in; margin: 0; }';
+        if (dynamicStyle) dynamicStyle.textContent = '@page { size: 3in 7in; margin: 0; }';
       } else {
         tagElement.classList.add('size-4x6');
-        dynamicStyle.textContent = '@page { size: 4in 6in; margin: 0; }';
+        if (dynamicStyle) dynamicStyle.textContent = '@page { size: 4in 6in; margin: 0; }';
       }
 
-      document.getElementById('out-biz-name').textContent = document.getElementById('bizName').value || 'BAYSTATE SHELLFISH CO.';
-      document.getElementById('out-cert').textContent = document.getElementById('certNum').value || '--';
-      document.getElementById('out-grant').textContent = document.getElementById('grantNum').value || '--';
+      const getValue = (id) => document.getElementById(id)?.value || '';
+
+      document.getElementById('out-biz-name').textContent = getValue('bizName') || 'BAYSTATE SHELLFISH CO.';
+      document.getElementById('out-cert').textContent = getValue('certNum') || '--';
+      document.getElementById('out-grant').textContent = getValue('grantNum') || '--';
       
-      const rawDate = document.getElementById('harvestDate').value;
-      const rawTime = document.getElementById('harvestTime').value;
+      document.getElementById('out-date').textContent = formatDate(getValue('harvestDate'));
+      document.getElementById('out-time').textContent = formatTime(getValue('harvestTime'));
       
-      document.getElementById('out-date').textContent = formatDate(rawDate);
-      document.getElementById('out-time').textContent = formatTime(rawTime);
-      
-      const area = document.getElementById('growingArea').value || '--';
-      const status = document.getElementById('sanitaryStatus').value || 'Approved';
+      const area = getValue('growingArea') || '--';
+      const status = getValue('sanitaryStatus') || 'Approved';
       document.getElementById('out-area').textContent = `${area} (${status})`;
 
-      const species = document.getElementById('species').value || '--';
-      const sizeGrade = document.getElementById('sizeGrade').value || '--';
+      const species = getValue('species') || '--';
+      const sizeGrade = getValue('sizeGrade') || '--';
       document.getElementById('out-species').textContent = `${species} - ${sizeGrade}`;
 
-      document.getElementById('out-quantity').textContent = document.getElementById('quantity').value || '--';
+      document.getElementById('out-quantity').textContent = getValue('quantity') || '--';
     }
 
     // Rasterize HTML Tag to TSPL Bitmap Command over Bluetooth Serial
@@ -549,4 +569,151 @@
         return;
       }
 
-      const copiesInput = prompt('Enter number of tag
+      const copiesInput = prompt('Enter number of tag copies to print:', '1');
+      if (!copiesInput) return;
+      const numCopies = parseInt(copiesInput, 10);
+      if (isNaN(numCopies) || numCopies <= 0) {
+        alert('Please enter a valid number of copies.');
+        return;
+      }
+
+      const sizeValue = document.getElementById('tagSize').value;
+      
+      let widthMm = 101.6, heightMm = 152.4; // 4x6 default
+      if (sizeValue === '3x7') { widthMm = 76.2; heightMm = 177.8; }
+      else if (sizeValue === '3x5') { widthMm = 76.2; heightMm = 127.0; }
+
+      const tagElement = document.getElementById('tag');
+      let port = null;
+      let writer = null;
+
+      try {
+        const targetWidthDots = Math.round(widthMm * 8);
+        const canvas = await html2canvas(tagElement, {
+          scale: targetWidthDots / tagElement.offsetWidth,
+          useCORS: true,
+          backgroundColor: '#ffffff'
+        });
+
+        const ctx = canvas.getContext('2d');
+        const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        const data = imgData.data;
+
+        const imgWidth = canvas.width;
+        const imgHeight = canvas.height;
+        const bytesPerRow = Math.ceil(imgWidth / 8);
+        const bitmapBytes = new Uint8Array(bytesPerRow * imgHeight);
+
+        for (let y = 0; y < imgHeight; y++) {
+          for (let x = 0; x < imgWidth; x++) {
+            const idx = (y * imgWidth + x) * 4;
+            const r = data[idx];
+            const g = data[idx + 1];
+            const b = data[idx + 2];
+            const avg = (r + g + b) / 3;
+
+            if (avg < 128) {
+              const byteIndex = y * bytesPerRow + Math.floor(x / 8);
+              const bitPosition = 7 - (x % 8);
+              bitmapBytes[byteIndex] |= (1 << bitPosition);
+            }
+          }
+        }
+
+        let tsplCmds = [];
+        tsplCmds.push(`SIZE ${widthMm} mm, ${heightMm} mm`);
+        tsplCmds.push(`GAP 2 mm, 0 mm`);
+        tsplCmds.push(`DIRECTION 1`);
+        tsplCmds.push(`CLS`);
+
+        const tsplHeader = tsplCmds.join('\r\n') + '\r\n';
+        const bitmapCommand = `BITMAP 0, 0, ${bytesPerRow}, ${imgHeight}, 0,`;
+        const tsplFooter = `\r\nPRINT 1, ${numCopies}\r\n`;
+
+        const encoder = new TextEncoder();
+
+        // Build the entire job as ONE contiguous buffer instead of separate
+        // write() calls for header/command/bitmap/footer. Separate writes can
+        // become separate underlying Bluetooth packets on immature RFCOMM
+        // stacks (current Android Web Serial support is still in beta), and
+        // if the printer's parser sees them out of order or with a gap, it
+        // silently discards the whole job instead of erroring.
+        const headerBytes = encoder.encode(tsplHeader + bitmapCommand);
+        const footerBytes = encoder.encode(tsplFooter);
+        const fullPayload = new Uint8Array(headerBytes.length + bitmapBytes.length + footerBytes.length);
+        fullPayload.set(headerBytes, 0);
+        fullPayload.set(bitmapBytes, headerBytes.length);
+        fullPayload.set(footerBytes, headerBytes.length + bitmapBytes.length);
+
+        port = await navigator.serial.requestPort();
+        await port.open({ baudRate: 115200 });
+
+        writer = port.writable.getWriter();
+
+        // Send in small chunks, but gate each chunk on writer.ready instead
+        // of a guessed setTimeout delay. writer.ready resolves based on the
+        // stream's real backpressure signal, so we only send the next chunk
+        // once the underlying sink has actually accepted the previous one.
+        const CHUNK_SIZE = 128;
+        for (let i = 0; i < fullPayload.length; i += CHUNK_SIZE) {
+          await writer.ready;
+          const chunk = fullPayload.slice(i, i + CHUNK_SIZE);
+          await writer.write(chunk);
+        }
+
+        alert(`Successfully sent ${numCopies} exact-match tag copy(ies) via Bluetooth Serial!`);
+      } catch (error) {
+        console.error(error);
+        if (error.name !== 'NotFoundError') {
+          alert('Printing error: ' + error.message);
+        }
+      } finally {
+        // Always release/close, even if something threw above, so the port
+        // isn't left locked for the next print attempt.
+        try {
+          if (writer) {
+            await writer.releaseLock();
+          }
+        } catch (e) {
+          console.error('Error releasing writer lock:', e);
+        }
+        try {
+          if (port) {
+            await port.close();
+          }
+        } catch (e) {
+          console.error('Error closing port:', e);
+        }
+      }
+    }
+
+    // Local USB / System Printer Handler
+    function printViaUSB() {
+      const copiesInput = prompt('Enter number of tag copies to print:', '1');
+      if (!copiesInput) return;
+      const numCopies = parseInt(copiesInput, 10);
+      if (isNaN(numCopies) || numCopies <= 0) {
+        alert('Please enter a valid number of copies.');
+        return;
+      }
+
+      const previewContainer = document.getElementById('previewContainer');
+      const originalTag = document.getElementById('tag');
+      
+      const clones = [];
+      for (let i = 1; i < numCopies; i++) {
+        const clone = originalTag.cloneNode(true);
+        clone.removeAttribute('id');
+        previewContainer.appendChild(clone);
+        clones.push(clone);
+      }
+
+      window.print();
+
+      setTimeout(() => {
+        clones.forEach(clone => clone.remove());
+      }, 500);
+    }
+  </script>
+</body>
+</html>
