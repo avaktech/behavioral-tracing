@@ -659,7 +659,11 @@
 
         const tsplHeader = tsplCmds.join('\r\n') + '\r\n';
         const bitmapCommand = `BITMAP ${offsetX}, ${offsetY}, ${bytesPerRow}, ${imgHeight}, 0,`;
-        const tsplFooter = `\r\nPRINT 1, ${numCopies}\r\n`;
+        // Advance the media an extra 19mm after the last copy so the final
+        // tag clears the tear bar / cutter for easy removal. FEED takes
+        // dots, so convert at 8 dots/mm (203 dpi).
+        const finalFeedDots = Math.round(19 * 8);
+        const tsplFooter = `\r\nPRINT 1, ${numCopies}\r\nFEED ${finalFeedDots}\r\n`;
 
         const encoder = new TextEncoder();
 
@@ -691,6 +695,19 @@
           const chunk = fullPayload.slice(i, i + CHUNK_SIZE);
           await writer.write(chunk);
         }
+
+        // Don't tear down the connection right away. The bytes being
+        // flushed from the writer just means the OS accepted them - the
+        // printer still needs real time to physically feed and fire the
+        // head for every requested copy. On this still-maturing Android
+        // Bluetooth-RFCOMM stack, closing the port mid-job can be treated
+        // as an abort, which shows up as the printer feeding blank labels
+        // instead of finishing the print. This is a rough heuristic based
+        // on label length and copy count - increase it if longer labels or
+        // larger quantities still cut off early.
+        const estimatedMsPerLabel = 700 + (heightMm * 4);
+        const totalWaitMs = (estimatedMsPerLabel * numCopies) + 300; // +300ms for the final feed
+        await new Promise(resolve => setTimeout(resolve, totalWaitMs));
 
         alert(`Successfully sent ${numCopies} exact-match tag copy(ies) via Bluetooth Serial!`);
       } catch (error) {
