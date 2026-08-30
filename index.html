@@ -705,18 +705,6 @@
         const totalWaitMs = estimatedMsPerLabel * numCopies;
         await new Promise(resolve => setTimeout(resolve, totalWaitMs));
 
-        // Send the extra 19mm FEED as its own separate transmission, only
-        // after PRINT has had time to physically finish. Sending FEED in
-        // the same continuous byte stream as PRINT can hit a motor-command
-        // conflict on this printer's firmware (PRINT is still driving the
-        // feed motor when FEED arrives), which aborts the whole job instead
-        // of just failing to add the extra feed.
-        const finalFeedDots = Math.round(19 * 8);
-        const feedPayload = encoder.encode(`FEED ${finalFeedDots}\r\n`);
-        await writer.ready;
-        await writer.write(feedPayload);
-        await new Promise(resolve => setTimeout(resolve, 500)); // let the feed motion finish
-
         alert(`Successfully sent ${numCopies} exact-match tag copy(ies) via Bluetooth Serial!`);
       } catch (error) {
         console.error(error);
