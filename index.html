@@ -659,7 +659,10 @@
 
         const tsplHeader = tsplCmds.join('\r\n') + '\r\n';
         const bitmapCommand = `BITMAP ${offsetX}, ${offsetY}, ${bytesPerRow}, ${imgHeight}, 0,`;
-        const tsplFooter = `\r\nPRINT 1, ${numCopies}\r\n`;
+        
+        // 19mm feed advance = approx 152 dots at 203 DPI (19mm * 8 dots/mm = 152 dots)
+        const feedDots = Math.round(19 * 8);
+        const tsplFooter = `\r\nPRINT 1, ${numCopies - 1}\r\nPRINT 1\r\nFEED ${feedDots}\r\n`;
 
         const encoder = new TextEncoder();
 
