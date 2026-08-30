@@ -379,6 +379,11 @@
         </div>
 
         <div class="form-group full">
+          <label for="printScale">Print Scale (%) &mdash; reduce if image runs off the edge of the label</label>
+          <input type="number" id="printScale" min="50" max="100" step="1" value="96">
+        </div>
+
+        <div class="form-group full">
           <label for="sanitaryStatus">Classification</label>
           <select id="sanitaryStatus">
             <option value="Approved">Approved</option>
@@ -461,7 +466,7 @@
   </div>
 
   <script>
-    const fields = ['tagSize', 'bizName', 'certNum', 'grantNum', 'harvestDate', 'harvestTime', 'species', 'sizeGrade', 'quantity', 'growingArea', 'sanitaryStatus'];
+    const fields = ['tagSize', 'bizName', 'certNum', 'grantNum', 'harvestDate', 'harvestTime', 'species', 'sizeGrade', 'quantity', 'growingArea', 'sanitaryStatus', 'printScale'];
 
     window.addEventListener('DOMContentLoaded', () => {
       // Load saved values from storage
@@ -587,8 +592,24 @@
       let port = null;
       let writer = null;
 
+      // Read the print scale (defaults to 96% to leave a small margin for
+      // the printer's unprintable edge). Clamped to a sane 50-100% range.
+      const scaleInput = document.getElementById('printScale');
+      let printScalePct = parseFloat(scaleInput?.value);
+      if (isNaN(printScalePct)) printScalePct = 96;
+      printScalePct = Math.min(100, Math.max(50, printScalePct));
+      const printScale = printScalePct / 100;
+
       try {
-        const targetWidthDots = Math.round(widthMm * 8);
+        // Full nominal label size in dots, used for the SIZE command and for
+        // centering the (possibly smaller) rendered image on the label.
+        const fullWidthDots = Math.round(widthMm * 8);
+        const fullHeightDots = Math.round(heightMm * 8);
+
+        // Shrink the actual rendered bitmap by printScale so it fits inside
+        // the printer's real printable area, which is typically a little
+        // smaller than the label's nominal dimensions.
+        const targetWidthDots = Math.round(fullWidthDots * printScale);
         const canvas = await html2canvas(tagElement, {
           scale: targetWidthDots / tagElement.offsetWidth,
           useCORS: true,
@@ -630,8 +651,14 @@
         tsplCmds.push(`DIRECTION 1`);
         tsplCmds.push(`CLS`);
 
+        // Center the (now smaller) bitmap within the full nominal label
+        // area so the margin is even on all sides rather than shifted to
+        // one edge.
+        const offsetX = Math.max(0, Math.round((fullWidthDots - imgWidth) / 2));
+        const offsetY = Math.max(0, Math.round((fullHeightDots - imgHeight) / 2));
+
         const tsplHeader = tsplCmds.join('\r\n') + '\r\n';
-        const bitmapCommand = `BITMAP 0, 0, ${bytesPerRow}, ${imgHeight}, 0,`;
+        const bitmapCommand = `BITMAP ${offsetX}, ${offsetY}, ${bytesPerRow}, ${imgHeight}, 0,`;
         const tsplFooter = `\r\nPRINT 1, ${numCopies}\r\n`;
 
         const encoder = new TextEncoder();
